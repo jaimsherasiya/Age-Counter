@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Age Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Age Calculator</h1>
+        </div>
+        <form id="age-form">
+            <label for="dob-day">Date of birth:</label>
+            <div class="dob-selectors">
+                <select id="dob-day" required>
+                    <option value="">Day</option>
+                    <!-- Options for days 1 to 31 -->
+                    <script>
+                        for (let i = 1; i <= 31; i++) {
+                            document.write('<option value="' + i + '">' + i + '</option>');
+                        }
+                    </script>
+                </select>
+                <select id="dob-month" required>
+                    <option value="">Month</option>
+                    <option value="0">January</option>
+                    <option value="1">February</option>
+                    <option value="2">March</option>
+                    <option value="3">April</option>
+                    <option value="4">May</option>
+                    <option value="5">June</option>
+                    <option value="6">July</option>
+                    <option value="7">August</option>
+                    <option value="8">September</option>
+                    <option value="9">October</option>
+                    <option value="10">November</option>
+                    <option value="11">December</option>
+                </select>
+                <select id="dob-year" required>
+                    <option value="">Year</option>
+                    <!-- Options for years -->
+                    <script>
+                        const currentYear = new Date().getFullYear();
+                        for (let i = currentYear; i >= 1900; i--) {
+                            document.write('<option value="' + i + '">' + i + '</option>');
+                        }
+                    </script>
+                </select>
+            </div>
+            <button type="submit">Calculate Age</button>
+        </form>
+        <div id="result" class="result">
+            <div class="row">
+                <div class="box age-section">
+                    <h2>Age</h2>
+                    <p id="age-years"></p>
+                    <p id="age-details"></p>
+                </div>
+                <div class="box next-birthday-section">
+                    <h2>Next Birthday</h2>
+                    <p id="next-birthday-date"></p>
+                    <p id="next-birthday-details"></p>
+                </div>
+            </div>
+            <div class="box summary-section">
+                <h2>Summary</h2>
+                <div class="summary-grid">
+                    <p id="summary-years"></p>
+                    <p id="summary-months"></p>
+                    <p id="summary-weeks"></p>
+                    <p id="summary-days"></p>
+                    <p id="summary-hours"></p>
+                    <p id="summary-minutes"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
